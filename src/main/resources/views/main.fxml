@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainBorderPane" maxHeight="377.0" maxWidth="619.0" minHeight="377.0" minWidth="619.0" prefHeight="377.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
+   <bottom>
+      <TextField fx:id="chatTextField" prefHeight="54.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <ListView fx:id="availableCamerasListView" prefHeight="282.0" prefWidth="168.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <AreaChart fx:id="areaChart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="93.0" prefWidth="268.0" rotate="90.0" BorderPane.alignment="CENTER">
+        <xAxis>
+          <NumberAxis fx:id="numberAxisX" side="BOTTOM" tickUnit="1" upperBound="255" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="numberAxisY" side="LEFT" tickUnit="1" />
+        </yAxis>
+         <BorderPane.margin>
+            <Insets left="-85.0" />
+         </BorderPane.margin>
+      </AreaChart>
+   </left>
+   <top>
+       <HBox prefHeight="31.0" prefWidth="619.0" BorderPane.alignment="CENTER">
+           <ImageView fx:id="gifImageView1" fitHeight="51.0" fitWidth="201.0" pickOnBounds="true" HBox.hgrow="ALWAYS">
+           </ImageView>
+           <ImageView fx:id="gifImageView2" fitHeight="51.0" fitWidth="200.0" pickOnBounds="true" HBox.hgrow="ALWAYS">
+           </ImageView>
+           <ImageView fx:id="gifImageView3" fitHeight="51.0" fitWidth="219.0" pickOnBounds="true" HBox.hgrow="ALWAYS">
+           </ImageView>
+       </HBox>
+   </top>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="cameraImageView" fitHeight="204.0" fitWidth="372.0" mouseTransparent="true" pickOnBounds="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <StackPane.margin>
+                  <Insets bottom="70.0" />
+               </StackPane.margin>
+            </ImageView>
+            <TextArea fx:id="shellTextArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="372.0" StackPane.alignment="BOTTOM_CENTER">
+               <StackPane.margin>
+                  <Insets bottom="17.0" />
+               </StackPane.margin>
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></TextArea>
+            <Slider maxHeight="-Infinity" minHeight="-Infinity" prefHeight="20.0" prefWidth="372.0" StackPane.alignment="BOTTOM_CENTER" />
+         </children>
+         <BorderPane.margin>
+            <Insets right="100.0" />
+         </BorderPane.margin>
+      </StackPane>
+   </center>
+</BorderPane>
